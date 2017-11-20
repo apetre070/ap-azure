@@ -1,4 +1,4 @@
-function New-APAzureVM{
+function New-APAzureSimpleVM{
     param([string]$ResourceGroupName,
     [string]$VNetName,
     [string]$SubnetName,
@@ -25,6 +25,16 @@ function New-APAzureVM{
                 $publisherName = "MicrosoftWindowsServer"
                 $offer = "WindowsServer"
                 $sku = "2012-R2-Datacenter"
+            }
+            "Ubuntu"{
+                $publisherName = "Canonical"
+                $offer = "Ubuntu_Core"
+                $sku = "16"
+            }
+            "Ubuntu"{
+                $publisherName = "Canonical"
+                $offer = "Ubuntu_Core"
+                $sku = "16"
             }
             default{
                 $publisherName = "MicrosoftWindowsServer"
