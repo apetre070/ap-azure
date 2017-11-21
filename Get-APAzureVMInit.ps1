@@ -24,7 +24,7 @@ function Get-APAzureVMInit {
                 $addObj | Add-Member NoteProperty -Name "OfferName" -Value $offer.offer
                 $addObj | Add-Member NoteProperty -Name "Skus" -Value $skus.skus
 
-                $returnData.add($addObj)
+                $returnData.add($addObj) | Out-Null
 
                 if($skus){remove-variable skus}
                 if($offer){Remove-Variable offer}
